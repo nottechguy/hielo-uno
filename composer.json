@@ -1,0 +1,18 @@
+{
+    "name": "luis/web-hielo1",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Luis\\WebHielo1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luis",
+            "email": "la.mendoza.1618@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
