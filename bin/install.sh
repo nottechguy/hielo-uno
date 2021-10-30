@@ -42,12 +42,14 @@ checkprograms() {
 copyvhost() {
     echo "Setting up the virtual host"
     sed -i "s/user/$USER/" $VHOSTFILE
-    sudo mv $VHOSTFILE /etc/apache2/sites-availables/hielo1.conf
-    sudo a2ensite /etc/apache2/sites-availables/hielo1.conf
+    sudo mv $VHOSTFILE /etc/apache2/sites-available/hielo1.conf
+    cd /etc/apache2/sites-available
+    sudo a2ensite hielo1.conf
     sudo /etc/init.d/apache2 restart
-    sudo echo "127.0.0.1  www.hielo-uno.com" >> /etc/hosts
+    sudo sed -i "127.0.0.1  www.hielo-uno.com" /etc/hosts
 
     echo "Everything done. \nOpen the web browser and go to http://www.hielo-uno.com"
+    cd ~
 }
 
 initmessage
